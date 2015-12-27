@@ -1,0 +1,17 @@
+.mono {
+      font-family: Courier New, Courier, fixed;
+      font-size: 90%;
+}
+
+.log {
+     background: #EEE; 
+     font-family: Courier New, Courier, fixed; 
+     display: block; 
+     white-space: pre; 
+     font-size: 80%;
+     height: 600px;
+     width: 400px;
+     resize: both;
+     overflow-y: scroll;
+     overflow-x: scroll;
+}
