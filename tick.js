@@ -1,7 +1,7 @@
 var pct = document.getElementById('pct');
-
+var f1 = document.getElementById('f1');
+var f2 = document.getElementById('f2');
 var ticker = 0;
-
 
 function now1000() {
   return new Date().getTime();
@@ -10,9 +10,7 @@ function now1000() {
 var start = now1000();
 var istart = start;
 
-function tick() {
-  console.log('tick');
-	
+function tick() {	
   var now = now1000();
   var dt = now - start;
   var pp = new Date(dt).toISOString().substr(14, 5);
@@ -21,15 +19,14 @@ function tick() {
   var ipp = new Date(idt).toISOString().substr(14, 5);
 	
   ticker += 1;
-  var f1 = document.getElementById('f1');
-  f1.innerHTML = ticker + ' ' + pp;
-	
-  var f2 = document.getElementById('f2');
+
+  f1.innerHTML = ticker + ' ' + pp;	
   f2.innerHTML = ipp;
 	
   var pct = document.getElementById('pct');
 
   pct.value = 100 * (idt / 10000);
+  console.log('pct', (idt/10000), (1000 * (idt/10000)));
 
   if (idt >= 10000) {
     istart = now1000();
