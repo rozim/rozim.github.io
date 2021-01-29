@@ -4,19 +4,20 @@ BODY {
 }
 
 #f1 {
-  font-size: x-large;
+  font-size: 1em;
   width: 200px;
+  border: 2px gray solid;
 }
 
 #f2 { 
-  font-size: x-large;
-
+  font-size: 2em;
+  border: 1px gray dashed;
   color: blue;
   width: 200px;
 }
 
 #f3 {
-  font-size: large;
+  font-size: 3em;
   border: 1px gray solid;
   width: 200px;
 }
