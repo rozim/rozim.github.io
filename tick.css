@@ -1,6 +1,12 @@
 
+HTML {
+  font-family: Georgia, Verdana;
+  font-size: 100%;
+}
+
 BODY {
-  font-face: Verdana, Georgia;
+  font-size: 1em;
+  font-family: inherit;
 }
 
 #f1 {
