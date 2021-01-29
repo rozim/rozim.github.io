@@ -6,7 +6,7 @@ var start = new Date().getTime();
 
 function tick() {
   console.log('tick');
-	var now = new Date().getTime();
+  var now = new Date().getTime();
   var dt = now - start;
   var pp = new Date(dt).toISOString().substr(14, 5)
   ticker += 1;
@@ -20,13 +20,13 @@ function do_start() {
   if (interval == null) {
     do_stop();
   }
-	console.log('really starting');
-	interval = setInterval(tick, 1000)
+  console.log('really starting');
+  nterval = setInterval(tick, 1000)
 }
 
 function do_stop() {
   console.log('stopping');
-	clearInterval(interval);
+  clearInterval(interval);
   interval = null;
- }
+}
   
