@@ -1,12 +1,22 @@
 
+BODY {
+  font-face: Verdana, Georgia;
+}
+
 #f1 {
-  font-size: 200%;
+  font-size: x-large;
+  width: 200px;
 }
 
 #f2 { 
+  font-size: x-large;
+
   color: blue;
+  width: 200px;
 }
 
 #f3 {
+  font-size: large;
   border: 1px gray solid;
+  width: 200px;
 }
