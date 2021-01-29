@@ -25,7 +25,7 @@ function tick() {
   var f2 = document.getElementById('f2');
   f2.innerHTML = ipp;
 	
-  console.log('idt', idt, ' ', istart0;
+  console.log('idt', idt, ' ', istart);
 	
   if (idt >= 10000) {
     istart = now1000();
