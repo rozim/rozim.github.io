@@ -27,8 +27,10 @@ function tick() {
   var f2 = document.getElementById('f2');
   f2.innerHTML = ipp;
 	
-  console.log('idt', idt, ' ', istart);
-	
+  var pct = document.getElementById('pct');
+
+  pct.value = 100 * (idt / 10000);
+
   if (idt >= 10000) {
     istart = now1000();
   }
