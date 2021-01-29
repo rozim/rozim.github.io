@@ -1,12 +1,14 @@
 var pct = document.getElementById('pct');
 
 var ticker = 0;
-var start = new Date().getTime();
-var istart = new Date().getTime();
+
 
 function now1000() {
-  return Date().getTime();
+  return new Date().getTime();
 }
+
+var start = now1000();
+var istart = start;
 
 function tick() {
   console.log('tick');
