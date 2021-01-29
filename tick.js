@@ -3,6 +3,11 @@ var f1 = document.getElementById('f1');
 var f2 = document.getElementById('f2');
 var f3 = document.getElementById('f3');
 
+console.assert(pct);
+console.assert(f1);
+console.assert(f2);
+console.assert(f3);
+
 var ticker = 0;
 
 function now1000() {
