@@ -23,7 +23,9 @@ function tick() {
   f1.innerHTML = ticker + ' ' + pp;
 	
   var f2 = document.getElementById('f2');
-  f2.innerHTML = ticker + ' ' + ipp;
+  f2.innerHTML = ipp;
+	
+  console.log('idt', idt, ' ', istart0;
 	
   if (idt >= 10000) {
     istart = now1000();
