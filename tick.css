@@ -7,16 +7,18 @@ HTML {
 BODY {
   font-size: 1em;
   font-family: inherit;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
 #f1 {
-  font-size: 1em;
+  font-size: 5em;
   width: 200px;
   border: 2px gray solid;
 }
 
 #f2 { 
-  font-size: 2em;
+  font-size: 5em;
   border: 1px gray dashed;
   color: blue;
   width: 200px;
@@ -24,7 +26,13 @@ BODY {
 }
 
 #f3 {
-  font-size: 3em;
+  font-size: 5em;
   border: 1px gray solid;
   width: 200px;
 }
+
+#par {
+  width: 400px;
+  height: 100px;
+}
+
