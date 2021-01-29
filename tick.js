@@ -48,7 +48,7 @@ function do_start() {
     do_stop();
   }
   console.log('really starting');
-  nterval = setInterval(tick, 1000)
+  interval = setInterval(tick, 1000)
 }
 
 function do_stop() {
@@ -57,3 +57,10 @@ function do_stop() {
   interval = null;
 }
   
+function do_reset() {
+  ticker = 0;
+  start = now1000();
+  istart = start;
+}
+
+	
