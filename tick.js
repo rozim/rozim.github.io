@@ -1,6 +1,8 @@
 var pct = document.getElementById('pct');
 var f1 = document.getElementById('f1');
 var f2 = document.getElementById('f2');
+var f3 = document.getElementById('f3');
+
 var ticker = 0;
 
 function now1000() {
@@ -18,18 +20,19 @@ function tick() {
   var idt = now - istart;
   var ipp = new Date(idt).toISOString().substr(14, 5);
 	
-  ticker += 1;
 
-  f1.innerHTML = ticker + ' ' + pp;	
-  f2.innerHTML = ipp;
+  f1.innerHTML = ticker;
+  f2.innerHTML = pp;	
+  f3.innerHTML = ipp;
 	
   var pct = document.getElementById('pct');
 
   pct.value = 100 * (idt / 10000);
-  console.log('pct', (idt/10000), (1000 * (idt/10000)));
+  // console.log('pct', (idt/10000), (1000 * (idt/10000)));
 
   if (idt >= 10000) {
     istart = now1000();
+    ticker += 1;
   }
 }
 
