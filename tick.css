@@ -14,6 +14,7 @@ BODY {
   border: 1px gray dashed;
   color: blue;
   width: 200px;
+  font-face: Verdana, Georgia;
 }
 
 #f3 {
