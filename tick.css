@@ -13,7 +13,7 @@ BODY {
 
 #f1 {
   font-size: 5em;
-  width: 200px;
+  width: 300px;
   border: 2px gray solid;
 }
 
@@ -21,18 +21,19 @@ BODY {
   font-size: 5em;
   border: 1px gray dashed;
   color: blue;
-  width: 200px;
-  font-face: Verdana, Georgia;
+  width: 300px;
+  font-face: Verdana;
 }
 
 #f3 {
   font-size: 5em;
   border: 1px gray solid;
-  width: 200px;
+  width: 300px;
+  font-face: Georgia;
 }
 
-#par {
-  width: 400px;
+#par[value] {
+  width: 300px;
   height: 100px;
 }
 
