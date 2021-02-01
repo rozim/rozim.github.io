@@ -12,15 +12,15 @@ BODY {
 }
 
 BUTTON {
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
 }
 
 #f1 {
   font-size: 5em;
   width: 300px;
   min-width: 300px;
-  border: 2px gray solid;
+  border: 1px gray dashed;      
   text-align: right;
   font-family: Roboto;
 }
@@ -37,7 +37,7 @@ BUTTON {
 
 #f3 {
   font-size: 5em;
-  border: 1px gray solid;
+  border: 1px gray dashed;    
   width: 300px;
   min-width: 300px;
   font-family: Roboto;    
