@@ -47,12 +47,10 @@ function do_start() {
   if (interval == null) {
     do_stop();
   }
-  console.log('really starting');
   interval = setInterval(tick, 1000)
 }
 
 function do_stop() {
-  console.log('stopping');
   clearInterval(interval);
   interval = null;
 }
@@ -61,6 +59,10 @@ function do_reset() {
   ticker = 0;
   start = now1000();
   istart = start;
+  f1.innerHTML = '0';
+  f2.innerHTML = '';
+//  f3.innerHTML = '';
+	  pct.value = 0;
 }
 
 	
