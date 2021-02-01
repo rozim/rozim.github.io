@@ -54,10 +54,14 @@ function tick() {
 }
 
 function fill_tick() {
-    const size = 2;
-    const x = size * (Math.random() * (100 / size)) - size;
-    const y = size * (Math.random() * (100 / size)) - size;
-    ctx.fillRect(x, y, size, size);
+    //const size = 1;
+    //const x = size * (Math.random() * (200 / size)) - size;
+    //const y = size * (Math.random() * (200 / size)) - size;
+    //ctx.fillRect(x, y, size, size);
+    ctx.fillRect(Math.random() * 200,
+		 Math.random() * 200,
+		 1,
+		 1);
 }
 
 

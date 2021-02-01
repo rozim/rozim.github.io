@@ -12,42 +12,51 @@ BODY {
 }
 
 BUTTON {
-  width: 200px;
-  height: 100px;
-  font-size: 2em;
+  width: 400px;
+  height: 200px;
+  font-size: 4em;
   font-family: Open Sans;
 }
 
 #f1 {
   font-size: 5em;
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 400px;
+  height: 150px;  
   border: 1px gray dashed;      
   text-align: right;
   font-family: Roboto;
+  color: blue;  
 }
 
 #f2 { 
-  font-size: 5em;
+  font-size: 6em;
   border: 1px gray dashed;
   color: blue;
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 400px;
+  height: 150px;  
   font-family: Roboto;  
   text-align: right;
 }
 
 #f3 {
-  font-size: 5em;
+  font-size: 7em;
   border: 1px gray dashed;    
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 400px;
+  height: 150px;
   font-family: Roboto;    
   text-align: right;
 }
 
 #pct[value] {
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  height: 200px;
 }
 
+#c {
+    width: 200px;
+    height: 200px;
+    border: 1px red dashed;
+}
