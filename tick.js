@@ -4,6 +4,7 @@ const f2 = document.getElementById('f2');
 const f3 = document.getElementById('f3');
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
+const time_len = 10000;
 
 console.assert(pct);
 console.assert(f1);
@@ -18,6 +19,7 @@ var start; // t = now1000();
 var istart; //  = start;
 var interval;  // = setInterval(tick, 1000);
 var fill_interval;
+
 
 function now1000() {
     return new Date().getTime();
@@ -36,13 +38,18 @@ function tick() {
     f2.innerHTML = pp;	
     f3.innerHTML = ipp;
     
-    pct.value = 100 * (idt / 10000);
+    pct.value = idt;
     // console.log('pct', (idt/10000), (1000 * (idt/10000)));
 
-    if (idt >= 10000) {
+    if (idt >= time_len) {
 	istart = now1000();
 	ticker += 1;
-	ctx.fillStyle = ticker % 2 == 0 ? 'white' : 'black';
+	ctx.fillStyle = ['black',
+			 'red',
+			 'blue',
+			 'green',
+			 'purple',
+			 'white'][ticker % 6];
     }
 }
 
@@ -94,5 +101,7 @@ function do_reset() {
 
 
 function do_onload() {
+    pct.max = time_len;
     do_start();
+
 }
