@@ -1,18 +1,23 @@
-var pct = document.getElementById('pct');
-var f1 = document.getElementById('f1');
-var f2 = document.getElementById('f2');
-var f3 = document.getElementById('f3');
+const pct = document.getElementById('pct');
+const f1 = document.getElementById('f1');
+const f2 = document.getElementById('f2');
+const f3 = document.getElementById('f3');
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
 
 console.assert(pct);
 console.assert(f1);
 console.assert(f2);
 console.assert(f3);
+console.assert(canvas);
+console.assert(ctx);
 
 var ticker = 0;
 var is_reset = true;
 var start; // t = now1000();
 var istart; //  = start;
 var interval;  // = setInterval(tick, 1000);
+var fill_interval;
 
 function now1000() {
     return new Date().getTime();
@@ -20,12 +25,12 @@ function now1000() {
 
 
 function tick() {	
-    var now = now1000();
-    var dt = now - start;
-    var pp = new Date(dt).toISOString().substr(14, 5);
+    const now = now1000();
+    const dt = now - start;
+    const pp = new Date(dt).toISOString().substr(14, 5);
     
-    var idt = now - istart;
-    var ipp = new Date(idt).toISOString().substr(14+3, 5-3);
+    const idt = now - istart;
+    const ipp = new Date(idt).toISOString().substr(14+3, 5-3);
 
     f1.innerHTML = ticker;
     f2.innerHTML = pp;	
@@ -37,7 +42,15 @@ function tick() {
     if (idt >= 10000) {
 	istart = now1000();
 	ticker += 1;
+	ctx.fillStyle = ticker % 2 == 0 ? 'white' : 'black';
     }
+}
+
+function fill_tick() {
+    const size = 2;
+    const x = size * (Math.random() * (100 / size)) - size;
+    const y = size * (Math.random() * (100 / size)) - size;
+    ctx.fillRect(x, y, size, size);
 }
 
 
@@ -53,13 +66,16 @@ function do_start() {
     for (const el of [f1, f2, f3]) {
 	el.style.backgroundColor = 'white';
     }
-    interval = setInterval(tick, 1000)
+    interval = setInterval(tick, 100);
+    fill_interval = setInterval(fill_tick, 10);
 }
 
 
 function do_stop() {
     clearInterval(interval);
+    clearInterval(fill_interval);    
     interval = null;
+    fill_interval = null;
 
     for (const el of [f1, f2, f3]) {
 	el.style.backgroundColor = '#EEE';
