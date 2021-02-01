@@ -23,15 +23,12 @@ function tick() {
   var pp = new Date(dt).toISOString().substr(14, 5);
 	
   var idt = now - istart;
-  var ipp = new Date(idt).toISOString().substr(14, 5);
-	
+  var ipp = new Date(idt).toISOString().substr(14+3, 5-3);
 
   f1.innerHTML = ticker;
   f2.innerHTML = pp;	
   f3.innerHTML = ipp;
 	
-  var pct = document.getElementById('pct');
-
   pct.value = 100 * (idt / 10000);
   // console.log('pct', (idt/10000), (1000 * (idt/10000)));
 

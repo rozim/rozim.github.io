@@ -22,7 +22,7 @@ BUTTON {
   min-width: 300px;
   border: 2px gray solid;
   text-align: right;
-  font-family: monospace;
+  font-family: Roboto;
 }
 
 #f2 { 
@@ -31,7 +31,7 @@ BUTTON {
   color: blue;
   width: 300px;
   min-width: 300px;
-  font-family: Verdana;
+  font-family: Roboto;  
   text-align: right;
 }
 
@@ -40,7 +40,7 @@ BUTTON {
   border: 1px gray solid;
   width: 300px;
   min-width: 300px;
-  font-family: Georgia;
+  font-family: Roboto;    
   text-align: right;
 }
 
