@@ -1,8 +1,6 @@
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
-
-
-var dang = (2.0 * Math.PI) / 60.0;
+const dang = (2.0 * Math.PI) / 60.0;
 
 var start = new Date().getTime();
 
@@ -27,18 +25,32 @@ function tick() {
 
     ctx.strokeStyle = 'white';
     ctx.lineWidth = 2.0;
+    
     // Enlarging inner
     ctx.fillStyle = 'rgb(64, 64, 64)';
     ctx.beginPath();
     ctx.arc(cx, cy, r * pct, 0, Math.PI * 2, true);
+    
     ctx.fill();    
     // Inner
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
+    
     ctx.beginPath();
-    ctx.arc(cx, cy, 5, 0, Math.PI * 2, true);
-    ctx.stroke();
+    // Not Movado :)
+    ctx.arc(cx, cy, 20, 0, Math.PI * 2, true);
     ctx.fill();
+
+    ctx.beginPath();    
+    ctx.arc(cx, cy - 40, 14, 0, Math.PI * 2, true);
+    ctx.fill();
+
+    ctx.beginPath();    
+    ctx.arc(cx, cy - 70, 10, 0, Math.PI * 2, true);
+    ctx.fill();    
+    //ctx.stroke();
+
+    
     // Outer
     ctx.fillStyle = 'white';    
     ctx.strokeStyle = 'white';    
