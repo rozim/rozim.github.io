@@ -4,14 +4,19 @@ const dang = (2.0 * Math.PI) / 60.0;
 
 var start = new Date().getTime();
 
-var xx = [];
-var yy = [];
+var marks = [];
+var last_mark = 0;
+
+function random() {
+    return Math.random();
+}
 
 function tick() {
     const now  = new Date().getTime();
     if ((now - start) > 60 * 1000) {
 	console.log('reset');
 	start = now;
+	marks = [];
     }
     var pct = (now - start) / (60 * 1000);
     var ang = -Math.PI / 2 + (pct * Math.PI * 2);
@@ -25,7 +30,6 @@ function tick() {
     ctx.fillStyle = 'black';
     ctx.clearRect(0, 0, w, h);
     
-
     ctx.strokeStyle = 'white';
     ctx.lineWidth = 2.0;
     
@@ -52,7 +56,6 @@ function tick() {
     ctx.arc(cx, cy - 70, 10, 0, Math.PI * 2, true);
     ctx.fill();    
     //ctx.stroke();
-
 
     // 4 marks
     ctx.fillStyle = 'gray';
@@ -86,16 +89,34 @@ function tick() {
 	cx + Math.cos(ang) * (r - 1),
 	cy + Math.sin(ang) * (r - 1));
     ctx.stroke();
+    
     // Moving thing on ticking line.
     ctx.fillStyle = 'red';    
     ctx.beginPath();
+    var mark_x = cx + Math.cos(ang) * (1 - pct) * (r - 5);
+    var mark_y = cy + Math.sin(ang) * (1 - pct) * (r - 5);
+    var mark_x2 = cx + Math.cos(ang) * (pct) * (r - 5);
+    var mark_y2 = cy + Math.sin(ang) * (pct) * (r - 5);    
+    if ((now - last_mark) >= 100) {
+	marks.push([mark_x + random(), mark_y + random()]);
+	marks.push([mark_x2 + 2 * random() - 1, mark_y2 + 2 * random() - 1]);	
+	last_mark = now;
+    }
     ctx.arc(
-	cx + Math.cos(ang) * (1 - pct) * (r - 5),
-	cy + Math.sin(ang) * (1 - pct) * (r - 5),
+	mark_x,
+	mark_y,
 	5,
 	0,
 	Math.PI * 2,
 	true);
+    ctx.fill();
+
+    // Spiral of marks
+    ctx.fillStyle = 'silver';
+    ctx.beginPath();    
+    for (let mark of marks) {
+	ctx.rect(mark[0], mark[1], 1, 1);
+    }
     ctx.fill();
 
     ang += dang;
